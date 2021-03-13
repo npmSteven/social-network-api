@@ -3,6 +3,12 @@ const mongoose = require('mongoose');
 module.exports.LikeModel = mongoose.model('like', {
   userId: String,
   postId: String,
-  createdAt: Number,
-  updatedAt: Number,
+  createdAt: {
+    type: Number,
+    default: () => Math.floor(Date.now() / 1000),
+  },
+  updatedAt: {
+    type: Number,
+    default: () => Math.floor(Date.now() / 1000),
+  },
 });
