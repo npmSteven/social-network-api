@@ -5,6 +5,12 @@ module.exports.UserModel = mongoose.model('user', {
   username: String,
   password: String,
   avatar: String,
-  createdAt: Number,
-  updatedAt: Number,
+  createdAt: {
+    type: Number,
+    default: () => Math.floor(Date.now() / 1000),
+  },
+  updatedAt: {
+    type: Number,
+    default: () => Math.floor(Date.now() / 1000),
+  },
 });
