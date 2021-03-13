@@ -81,8 +81,4 @@ router.post('/signIn', validateSignIn, async (req, res) => {
   }
 });
 
-router.get('/test', authCheck, (req, res) => {
-  res.json({ user: req.user });
-});
-
 module.exports = router;
